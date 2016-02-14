@@ -5,7 +5,7 @@ const Todo = props => (
   <Input
     type="checkbox"
     label={ props.text }
-    onChange={ props.done ? props.onUndone : props.onDone }
+    onChange={ props.onChange }
     checked={ props.done }
   />
 );
@@ -13,8 +13,7 @@ const Todo = props => (
 Todo.propTypes = {
   text: PropTypes.string.isRequired,
   done: PropTypes.bool.isRequired,
-  onDone: PropTypes.func,
-  onUndone: PropTypes.func,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default Todo;
